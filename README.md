@@ -62,7 +62,7 @@ specified input:
 To run both server and client scripts, one should have *python 3.5*
 installed, no side packages required.
 ### Server script.
-Autocomplete server script allows to run **TCP server**, which process
+Autocomplete server script allows to run **TCP server**, which processes
 autocomplete for *prefixes*, received from **clients**.
 
 Server script takes 2 positional arguments:
