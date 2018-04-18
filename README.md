@@ -9,7 +9,7 @@ constructed from input.
 
 This script requires *python 3.5* installed. It uses no side packages, so
 there is no *requirements.txt* in the project. Input should be `utf-8`
-ecnoded.
+enсoded.
 
 The script takes no arguments.
 
@@ -18,8 +18,8 @@ To use it, just run the following command in the terminal:
    $ python autocompleter.py
    ```
 
-  After the script runs, it is waiting for input. Input data shoul be
-  int the certain format. The first line should be integer **N**
+  After the script runs, it is waiting for input. Input data shoulв be
+  in the certain format. The first line should be integer **N**
   (1 <= **N** <= 10<sup>5</sup>), representing the number of words in the
   dictionary. Next N lines consist of a word and it's frequency
   (integer) of use. On the (N+2)<sup>th</sup> line, there is an
@@ -38,7 +38,7 @@ To use it, just run the following command in the terminal:
   ka
   kar
   ```
-Once input recieved by the script, it produces top 10 words
+Once input received by the script, it produces top 10 words
 (one per line, sorted at first by frequency *descending*,
 then alphabetically *ascending*), starting with specified prefixes.
 Words for different prefixes are separated by empty line.
@@ -63,7 +63,7 @@ To run both server and client scripts, one should have *python 3.5*
 installed, no side packages required.
 ### Server script.
 Autocomplete server script allows to run **TCP server**, which process
-autocompletion for *prefixes*, recieved from **clients**.
+autocomplete for *prefixes*, received from **clients**.
 
 Server script takes 2 positional arguments:
 * file_path: path to the file with words-frequency pairs. Example of file
@@ -89,16 +89,16 @@ It can serve only requests in the following format `GET <PREFIX>`
 otherwise *error 400* is returned. Handlers of client requests are
 processed in separate threads, so the main process is not blocked.
 Request handlers use *autocomplete_engine.py* to produce autocompletion.
-If no words found, empty line in sent.
+If no words found, empty bytes object in sent.
 Response in the form of top 10 words (one per line), encoded in *utf-8*
 is sent to client.
 
 ### Client script.
 Client script makes requests to server in format `GET <PREFIX>`, and
 receives most frequently used words for given *prefix*. If no possible
-words found, server sends empty string.
+words found, server sends empty bytes object.
 
-Script in infinite loop waits for input from user,
+Script runs in infinite loop waiting for input from user,
 to specify *prefix* of interest. Once *prefix* given,
 it prints the most used words, starting with this
 *prefix*. If empty prefix is sent, server can't recognise request format,
