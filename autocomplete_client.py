@@ -37,5 +37,3 @@ if __name__ == '__main__':
         prefix = input('Prefix: ')
         response = get_autocomplete_words(prefix, adress)
         print(response)
-
-

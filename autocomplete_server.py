@@ -1,8 +1,8 @@
-from autocompleter import parse_words_frequencies
-from autocomplete_engine import AutocompleteEngine
+from autocomplete_engine import AutocompleteEngine, parse_words_frequencies
 import argparse
 import socketserver
 import re
+
 
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
@@ -42,7 +42,6 @@ if __name__ == '__main__':
     arguments = parse_args()
     port = arguments.port
     file_path = arguments.file_path
-
 
     with open(file_path) as file:
         words_frequencies = parse_words_frequencies(file)
