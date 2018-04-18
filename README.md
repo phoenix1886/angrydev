@@ -18,7 +18,7 @@ To use it, just run the following command in the terminal:
    $ python autocompleter.py
    ```
 
-  After the script runs, it is waiting for input. Input data shoulв be
+  After the script runs, it is waiting for input. Input data should be
   in the certain format. The first line should be integer **N**
   (1 <= **N** <= 10<sup>5</sup>), representing the number of words in the
   dictionary. Next N lines consist of a word and it's frequency
